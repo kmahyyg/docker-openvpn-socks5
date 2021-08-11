@@ -52,7 +52,7 @@ ip route add table 128 default via "${GATEWAY}"
 spawn /usr/bin/gost -L socks5://${OVERRIDE_SOCKS_ARGS}
 log "INFO" "Spawn Socks5 Proxy Server"
 
-spawn /usr/bin/gost -L http://${OVERRIDE_SOCKS_ARGS}
+spawn /usr/bin/gost -L http://${OVERRIDE_HTTP_ARGS}
 log "INFO" "Spawn HTTP Proxy Server"
 
 cd /config/vpn
