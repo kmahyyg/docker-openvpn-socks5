@@ -11,7 +11,6 @@ FROM alpine:edge
 
 COPY --from=downloader /gost /usr/bin/gost
 COPY --from=downloader /update-resolv-conf.sh /usr/bin/openvpn-update-resolv-conf.sh
-COPY openvpn-up.sh /usr/bin/openvpn-ifdev.sh
 COPY entrypoint.sh /usr/bin/docker-entrypoint.sh
 
 RUN apk update && \
