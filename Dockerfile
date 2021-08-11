@@ -2,7 +2,7 @@ FROM alpine:edge AS downloader
 
 COPY downloader.sh /downloader.sh
 RUN apk update && \
-    apk add --no-cache bash curl ca-certificates && \
+    apk add --no-cache bash curl ca-certificates grep && \
     chmod +x /downloader.sh && \
     bash /downloader.sh
 
