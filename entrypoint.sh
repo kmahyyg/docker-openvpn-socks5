@@ -49,15 +49,14 @@ ip rule add from "${IPADDR}" table 128
 ip route add table 128 to "${NETWORK}/${PREFIX}" dev eth0
 ip route add table 128 default via "${GATEWAY}"
 
-cd /config/vpn
-spawn openvpn \
-    --script-security 2 \
-    --config "/config/vpn/vpn.ovpn" \
-    --up /usr/bin/openvpn-update-resolv-conf.sh
-log "INFO" "Spawn OpenVPN"
-
 spawn /usr/bin/gost -L socks5://${OVERRIDE_SOCKS_ARGS}
 log "INFO" "Spawn Socks5 Proxy Server"
 
 spawn /usr/bin/gost -L http://${OVERRIDE_SOCKS_ARGS}
 log "INFO" "Spawn HTTP Proxy Server"
+
+cd /config/vpn
+openvpn \
+    --script-security 2 \
+    --config "/config/vpn/vpn.ovpn" \
+    --up /usr/bin/openvpn-update-resolv-conf.sh
