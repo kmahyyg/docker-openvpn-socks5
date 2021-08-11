@@ -18,7 +18,7 @@ RUN apk update && \
     mkdir -p /etc/openvpn && \
     chmod +x /usr/bin/gost /usr/bin/openvpn-update-resolv-conf.sh /usr/bin/docker-entrypoint.sh 
 
-EXPOSE 3128 8080
+EXPOSE 3128 1080
 VOLUME ["/config/vpn"]
 ENV OVERRIDE_HTTP_ARGS=0.0.0.0:3128
 ENV OVERRIDE_SOCKS_ARGS=0.0.0.0:1080
