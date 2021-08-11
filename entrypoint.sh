@@ -49,10 +49,10 @@ ip rule add from "${IPADDR}" table 128
 ip route add table 128 to "${NETWORK}/${PREFIX}" dev eth0
 ip route add table 128 default via "${GATEWAY}"
 
-spawn /usr/bin/gost -L socks5://${OVERRIDE_SOCKS_ARGS}
+spawn /usr/bin/gost -L socks5://${OVERRIDE_SOCKS_ARGS} ${APPEND_PROXY_SOCKS_ARGS}
 log "INFO" "Spawn Socks5 Proxy Server"
 
-spawn /usr/bin/gost -L http://${OVERRIDE_HTTP_ARGS}
+spawn /usr/bin/gost -L http://${OVERRIDE_HTTP_ARGS} ${APPEND_PROXY_HTTP_ARGS}
 log "INFO" "Spawn HTTP Proxy Server"
 
 cd /config/vpn
