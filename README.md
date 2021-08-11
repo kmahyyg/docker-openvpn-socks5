@@ -41,7 +41,7 @@ CUSTOM-HEADER name content -- Adds the custom Header with name as name and conte
 --socks-proxy server [port] [authfile]
 Connect to remote host through a Socks5 proxy at address server and port port (default=1080). authfile (optional) is a file containing a username and password on 2 lines, or "stdin" to prompt from console.
 ```
-
+- If the OpenVPN is using encrypted private key, add `askpass [AUTHFILE]` to the ovpn file. AUTHFILE should contain only one line as password.
 - Socks5 Server will open on port 1080, HTTP Proxy Server will open on port 3128, Both service offered by GOST!
 - If you want add authentication to proxy server or change the port, simply use those two environment variable:
 
