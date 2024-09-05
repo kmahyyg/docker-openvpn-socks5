@@ -24,5 +24,8 @@ ENV OVERRIDE_HTTP_ARGS=0.0.0.0:3128
 ENV OVERRIDE_SOCKS_ARGS=0.0.0.0:1080
 ENV APPEND_PROXY_HTTP_ARGS=""
 ENV APPEND_PROXY_SOCKS_ARGS=""
+LABEL org.opencontainers.image.source=https://github.com/kmahyyg/docker-openvpn-socks5
+LABEL org.opencontainers.image.description="SOCKS5 Proxy Server with OVPN"
+LABEL org.opencontainers.image.licenses=AGPLv3
 
 ENTRYPOINT [ "/usr/bin/docker-entrypoint.sh" ]
