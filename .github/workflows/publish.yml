@@ -78,7 +78,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           retention-days: 30
-          name: dir-ztncui-aio-${{ env.platform-tag }}
+          name: dir-docker-ovpn-s5-${{ env.platform-tag }}
           path: /tmp/build/out/docker-ovpn-s5-${{ env.platform-tag }}.tar
       - name: Move cache
         run: |
