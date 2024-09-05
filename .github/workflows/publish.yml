@@ -79,7 +79,7 @@ jobs:
         with:
           retention-days: 30
           name: dir-ztncui-aio-${{ env.platform-tag }}
-          path: /tmp/build/out/ztncui-aio-${{ env.platform-tag }}.tar
+          path: /tmp/build/out/docker-ovpn-s5-${{ env.platform-tag }}.tar
       - name: Move cache
         run: |
           rm -rf /tmp/.buildx-cache
